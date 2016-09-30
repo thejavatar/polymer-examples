@@ -1,0 +1,30 @@
+body {
+    margin: 20px;
+    background: #cccccc;
+    font-family: Calibri;
+}
+
+h1 {
+    padding: 10px 25px;
+    background-color: #fff;
+    margin-bottom: 0px;
+}
+
+h1 small a {
+    margin-left: 2em;
+    font-size: 0.6em;
+    font-weight: normal;
+    color: gray;
+    font-style: italic;
+    text-decoration: none;
+}
+
+h1 small a:hover {
+    text-decoration: underline;
+}
+
+paper-button.fancy {
+    font-family: SansSerif;
+    background: forestgreen;
+    color: white;
+}

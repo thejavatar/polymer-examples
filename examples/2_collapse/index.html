@@ -1,0 +1,73 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        iron-collapse div {
+            font-style: italic;
+            color: #CCCCCC;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+    <link rel="import" href="../../bower_components/paper-toggle-button/paper-toggle-button.html">
+
+    <!-- https://commons.wikimedia.org/wiki/File:Green_eyes_kitten.jpg -->
+</head>
+<body>
+
+<div id="content">
+
+    <h1>Collapsible area
+        <small><a href="https://elements.polymer-project.org/elements/iron-collapse">See documentation</a></small>
+    </h1>
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <style>
+                    iron-collapse {
+                        margin-top: 30px;
+                    }
+                </style>
+                <template>
+                    <paper-toggle-button>
+                        <span>Hidden</span>
+                    </paper-toggle-button>
+                    <iron-collapse>
+                        <h1>How come you can see me?</h1>
+                        <img width="400px" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Green_eyes_kitten.jpg"/>
+                        <br/><div>https://commons.wikimedia.org/wiki/File:Green_eyes_kitten.jpg</div>
+                    </iron-collapse>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        ready : function () {
+                            this.listen(this.$$("paper-toggle-button"), 'change', '_showHide');
+                        },
+                        _showHide : function () {
+                            this.$$("iron-collapse").toggle();
+                            if(this.$$("span").innerHTML == 'Hidden') {
+                                this.$$("span").innerHTML = 'Visible';
+                            } else {
+                                this.$$("span").innerHTML = 'Hidden';
+                            }
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</div>
+
+</body>
+</html>

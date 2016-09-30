@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+    <style>
+        google-map {
+            height: 400px;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../bower_components/google-map/google-map.html"/>
+    <link rel="import" href="../../bower_components/google-map/google-map-directions.html"/>
+
+</head>
+<body>
+
+<div id="content">
+
+    <h1>Google Maps - Directions</h1>
+
+    <demo-snippet>
+        <template>
+
+            <dom-module id="my-map">
+                <template>
+
+                    <google-map map="{{map}}" api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA"></google-map>
+                    <google-map-directions map="[[map]]"
+                                           start-address="Geneva, Switzerland"
+                                           end-address="Dubna, Russia"
+                                           waypoints='[{"location": "London, Great Britain"}, {"location": "Saint Petersburg, Russia"}, {"location": "Moscow, Russia"}]'
+                                           api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA">
+                    </google-map-directions>
+
+                </template>
+                <script>
+                    Polymer({
+                        is: "my-map"
+                    });
+                </script>
+            </dom-module>
+
+            <my-map></my-map>
+        </template>
+    </demo-snippet>
+</div>
+
+</body>
+</html>

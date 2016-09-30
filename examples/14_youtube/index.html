@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+
+        #video {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #000;
+        }
+
+        #video google-youtube {
+            margin: auto;
+            width: 50%;
+        }
+
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../bower_components/google-youtube/google-youtube.html">
+
+</head>
+<body>
+
+<div id="content">
+
+    <h1>Youtube</h1>
+
+    <demo-snippet>
+        <template>
+
+            <div id="video">
+                <google-youtube
+                        video-id="fFF2Yup2dMM"
+                        fluid
+                        rel="0">
+                </google-youtube>
+            </div>
+
+        </template>
+    </demo-snippet>
+</div>
+
+</body>
+</html>

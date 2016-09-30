@@ -1,0 +1,35 @@
+buildscript {
+    dependencies {
+        classpath("com.moowork.gradle:gradle-node-plugin:0.12")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: "com.moowork.node"
+
+group 'com.thejavatar'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+node {
+    download = true
+    npmVersion = "3.9.3"
+    workDir = file("${project.buildDir}/nodejs")
+}
+
+task bowerDependencies(dependsOn: "npmInstall", type: NodeTask) {
+    script = file("node_modules/bower/lib/bin/bower.js")
+    args = ["install"]
+}
+
+task run(dependsOn: "npmInstall", type: NodeTask) {
+    script = file("node_modules/gulp-cli/bin/gulp.js")
+}
+
+build.dependsOn bowerDependencies
+

@@ -1,0 +1,26 @@
+{
+    "name": "polymer-examples",
+    "dependencies": {
+        "webcomponentsjs": "^0.7.22",
+        "web-component-tester": "^4.3.1",
+        "polymer": "Polymer/polymer#^1.5.0",
+        "test-fixture" : "PolymerElements/test-fixture#^1.1.1",
+        "iron-test-helpers" : "PolymerElements/iron-test-helpers#^1.2.5",
+        "iron-icon": "PolymerElements/iron-icon#^1.0.8",
+        "iron-icons": "PolymerElements/iron-icons#^1.1.3",
+        "iron-pages": "PolymerElements/iron-pages#^1.0.8",
+        "iron-collapse": "PolymerElements/iron-collapse #^1.2.1",
+        "iron-dropdown": "PolymerElements/iron-dropdown #^1.5.2",
+        "paper-progress": "PolymerElements/paper-progress#^1.0.10",
+        "paper-input": "PolymerElements/paper-input#^1.1.18",
+        "paper-toggle-button": "PolymerElements/paper-toggle-button#^1.2.0",
+        "app-layout": "PolymerElements/app-layout#^0.10.4",
+        "app-storage": "PolymerElements/app-storage#^0.9.4",
+        "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#^1.1.9",
+        "google-youtube": "GoogleWebComponents/google-youtube#^1.2.1",
+        "sortablejs" : "^1.4.2",
+        "iron-demo-helpers" : "^1.2.5",
+        "google-map" : "^1.1.11",
+        "paper-button" : "1.0.13"
+    }
+}
