@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/google-feeds/google-feeds.html">
+	
+	<style>
+	body {
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-size: 0.9em;
+		font-weight: light;
+	}
+	li {
+		padding: 5px;
+	}
+	
+	h2 a, li a {
+		color: orange;
+	}
+	
+	li a {
+		text-decoration: none;
+		font-size: 0.9em;
+	}
+	
+	h2 a:hover, li a:hover {
+		color: blue;
+	}
+	</style>
+	
+					
+</head>
+<body>
+
+<div id="content">
+
+    <h1>RSS Feed
+        <small><a href="https://elements.polymer-project.org/elements/google-feeds">See documentation</a></small>
+    </h1>
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+					<google-feeds feed="http://thejavatar.com/rss" results='{{result}}'></google-feeds>
+					<h2>Articles from <a href="http://thejavatar.com">theJavatar.com</a></h2>
+					<ul>
+					<template is="dom-repeat" items="{{result.entries}}">
+						<li>
+					        {{item.title}}
+					        <a href="{{item.link}}">( ... )</a>
+						</li>
+					    </template>
+					</ul>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo"
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</div>
+
+</body>
+</html>

@@ -13,6 +13,14 @@
         "iron-dropdown": "PolymerElements/iron-dropdown #^1.5.2",
         "paper-progress": "PolymerElements/paper-progress#^1.0.10",
         "paper-input": "PolymerElements/paper-input#^1.1.18",
+	"paper-badge": "PolymerElements/paper-badge#^1.1.3",
+	"paper-dialog": "PolymerElements/paper-dialog#^1.1.0",
+	"paper-spinner": "PolymerElements/paper-spinner#^1.2.0",
+	"paper-tabs": "PolymerElements/paper-tabs#^1.6.2",
+	"paper-slider": "PolymerElements/paper-slider#^1.0.11",
+	"paper-toast": "PolymerElements/paper-toast#^1.3.0",
+	"google-chart": "GoogleWebComponents/google-chart#^1.1.0",
+	"google-feeds": "GoogleWebComponents/google-feeds#^1.0.2",
         "paper-toggle-button": "PolymerElements/paper-toggle-button#^1.2.0",
         "app-layout": "PolymerElements/app-layout#^0.10.4",
         "app-storage": "PolymerElements/app-storage#^0.9.4",
@@ -21,6 +29,10 @@
         "sortablejs" : "^1.4.2",
         "iron-demo-helpers" : "^1.2.5",
         "google-map" : "^1.1.11",
-        "paper-button" : "1.0.13"
+        "paper-button" : "1.0.13",
+		"iron-ajax" : "PolymerElements/iron-ajax#^1.4.3",
+		        "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.3.5",
+				        "paper-listbox": "PolymerElements/paper-listbox#^1.1.2",
+						        "paper-item": "PolymerElements/paper-item#^1.2.1"
     }
 }
