@@ -9,32 +9,33 @@
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
     <link rel="import" href="../../bower_components/google-feeds/google-feeds.html">
-	
-	<style>
-	body {
-		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-		font-size: 0.9em;
-		font-weight: light;
-	}
-	li {
-		padding: 5px;
-	}
-	
-	h2 a, li a {
-		color: orange;
-	}
-	
-	li a {
-		text-decoration: none;
-		font-size: 0.9em;
-	}
-	
-	h2 a:hover, li a:hover {
-		color: blue;
-	}
-	</style>
-	
-					
+
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.9em;
+            font-weight: light;
+        }
+
+        li {
+            padding: 5px;
+        }
+
+        h2 a, li a {
+            color: orange;
+        }
+
+        li a {
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        h2 a:hover, li a:hover {
+            color: blue;
+        }
+    </style>
+
+
 </head>
 <body>
 
@@ -48,16 +49,16 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
-					<google-feeds feed="http://thejavatar.com/rss" results='{{result}}'></google-feeds>
-					<h2>Articles from <a href="http://thejavatar.com">theJavatar.com</a></h2>
-					<ul>
-					<template is="dom-repeat" items="{{result.entries}}">
-						<li>
-					        {{item.title}}
-					        <a href="{{item.link}}">( ... )</a>
-						</li>
-					    </template>
-					</ul>
+                    <google-feeds feed="http://thejavatar.com/rss" results='{{result}}'></google-feeds>
+                    <h2>Articles from <a href="http://thejavatar.com">theJavatar.com</a></h2>
+                    <ul>
+                        <template is="dom-repeat" items="{{result.entries}}">
+                            <li>
+                                {{item.title}}
+                                <a href="{{item.link}}">( ... )</a>
+                            </li>
+                        </template>
+                    </ul>
                 </template>
                 <script>
                     Polymer({

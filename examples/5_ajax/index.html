@@ -9,24 +9,24 @@
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
     <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-	    <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
-		
-		<style>
-		.person {
-			font-size: 1.1em;
-			margin: 10px;
-			padding: 5px 25px;
-		}
-		
-		.person:hover {
-			background: AliceBlue;
-		}
-		
-		.person p {
-			margin-top: 3px;
-			margin-bottom: 3px;
-		}
-		</style>
+    <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+    <style>
+        .person {
+            font-size: 1.1em;
+            margin: 10px;
+            padding: 5px 25px;
+        }
+
+        .person:hover {
+            background: AliceBlue;
+        }
+
+        .person p {
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+    </style>
 
 </head>
 <body>
@@ -40,19 +40,19 @@
     <demo-snippet>
         <template>
             <dom-module id="polymer-demo">
-			<template>
-				<iron-ajax
-				    auto
-				    url="https://jsonplaceholder.typicode.com/users"
-				    handle-as="json"
-				    last-response="{{response}}"></iron-ajax>
-					<template is="dom-repeat" items={{response}}>		
-						<div class="person">			
-						<p><strong>{{item.name}}</strong></p>
-						<p><em>from {{item.address.street}}, {{item.address.city}}</em></p>
-					</div>
-				</template>
-			</template>
+                <template>
+                    <iron-ajax
+                            auto
+                            url="https://jsonplaceholder.typicode.com/users"
+                            handle-as="json"
+                            last-response="{{response}}"></iron-ajax>
+                    <template is="dom-repeat" items={{response}}>
+                        <div class="person">
+                            <p><strong>{{item.name}}</strong></p>
+                            <p><em>from {{item.address.street}}, {{item.address.city}}</em></p>
+                        </div>
+                    </template>
+                </template>
                 <script>
                     Polymer({
                         is: "polymer-demo"

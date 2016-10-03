@@ -41,19 +41,21 @@
                     </paper-toggle-button>
                     <iron-collapse>
                         <h1>How come you can see me?</h1>
-                        <img width="400px" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Green_eyes_kitten.jpg"/>
-                        <br/><div>https://commons.wikimedia.org/wiki/File:Green_eyes_kitten.jpg</div>
+                        <img width="400px"
+                             src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Green_eyes_kitten.jpg"/>
+                        <br/>
+                        <div>https://commons.wikimedia.org/wiki/File:Green_eyes_kitten.jpg</div>
                     </iron-collapse>
                 </template>
                 <script>
                     Polymer({
                         is: "polymer-demo",
-                        ready : function () {
+                        ready: function () {
                             this.listen(this.$$("paper-toggle-button"), 'change', '_showHide');
                         },
-                        _showHide : function () {
+                        _showHide: function () {
                             this.$$("iron-collapse").toggle();
-                            if(this.$$("span").innerHTML == 'Hidden') {
+                            if (this.$$("span").innerHTML == 'Hidden') {
                                 this.$$("span").innerHTML = 'Visible';
                             } else {
                                 this.$$("span").innerHTML = 'Hidden';
