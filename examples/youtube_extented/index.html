@@ -1,0 +1,93 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+
+        #video {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #000;
+        }
+
+        #video google-youtube {
+            margin: auto;
+            width: 50%;
+        }
+
+        hr {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            height: 6px;
+            background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+            border: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../bower_components/google-youtube/google-youtube.html">
+    <link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
+    <link rel="import" href="../../bower_components/paper-button/paper-button.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+</head>
+<body>
+
+<demo-page label="YouTube" path="youtube_extented">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="my-video">
+                <template>
+
+                    <div id="video">
+                        <google-youtube
+                                id="vid"
+                                video-id="CdV0VGYhKXk"
+                                fluid
+                                rel="0"
+                                currenttime="{{currentTime}}"
+                                duration="{{duration}}"
+                                currenttimeformatted="{{currentTimeFormatted}}">
+                        </google-youtube>
+                    </div>
+
+                    <hr/>
+
+                    <p>Progress: {{currentTimeFormatted}}</p>
+                    <paper-progress value="{{currentTime}}" max="{{duration}}"></paper-progress>
+
+                    <br/>
+
+                    <paper-button class="fancy" on-click="_start">Start</paper-button>
+                    <paper-button class="fancy" on-click="_stop">Stop</paper-button>
+
+
+                </template>
+                <script>
+                    Polymer({
+                        is: "my-video",
+                        _start: function () {
+                            this.$$('google-youtube').play();
+                        },
+                        _stop: function () {
+                            this.$$('google-youtube').pause();
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <my-video></my-video>
+        </template>
+    </demo-snippet>
+</demo-page>
+
+</body>
+</html>

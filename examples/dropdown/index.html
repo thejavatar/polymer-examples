@@ -1,0 +1,63 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="../../bower_components/paper-item/paper-item.html">
+    <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+    <link rel="import" href="../../bower_components/paper-item/paper-item-body.html">
+    <link rel="import" href="../../bower_components/paper-item/paper-icon-item.html">
+    <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+    <link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+
+    <!-- https://www.pexels.com/photo/vegetables-italian-pizza-restaurant-2232/ -->
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+</head>
+<body>
+
+<demo-page label="Dropdown" path="dropdown" documentation="https://elements.polymer-project.org/elements/paper-dropdown-menu">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <paper-dropdown-menu label="Select free topping">
+                        <paper-listbox class="dropdown-content">
+                            <paper-item>Pepperoni</paper-item>
+                            <paper-item>Mushrooms</paper-item>
+                            <paper-item>Ananas</paper-item>
+                            <paper-icon-item>
+                                <iron-icon icon="maps:local-pizza" item-icon></iron-icon>
+                                <paper-item-body two-line>
+                                    <div>Another pizza!</div>
+                                    <div secondary>For those extra hungry!</div>
+                                </paper-item-body>
+                            </paper-icon-item>
+                        </paper-listbox>
+                    </paper-dropdown-menu>
+                    <br/>
+                    <img width="400px" src="./pizza.jpg"/>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo"
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>

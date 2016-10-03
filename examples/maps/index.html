@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+    <style>
+        google-map {
+            height: 400px;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../bower_components/google-map/google-map.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+</head>
+<body>
+
+<demo-page label="Google maps" path="maps" >
+
+    <demo-snippet>
+        <template>
+            <google-map latitude="56.7320" longitude="37.1669"
+                        api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA">
+            </google-map>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>

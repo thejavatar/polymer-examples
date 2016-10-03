@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="pages-list.html">
+
+
+<dom-module id="page-counter">
+    <template>
+        <style>
+            :host {
+                font-weight: lighter;
+                color: gray;
+                float: right;
+            }
+        </style>
+        ({{_getCurrent(page)}}/{{_getTotal(page)}})
+    </template>
+    <script>
+        Polymer({
+            is: "page-counter",
+            behaviors: [PagesList],
+            _getTotal: function (currentPage) {
+                return this.pages.length;
+            },
+            _getCurrent: function (currentPage) {
+                return this.pages.indexOf(currentPage) + 1;
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <style>
+        body {
+            width: 1200px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        h1 {
+            margin-top: 40px;
+            padding-left: 0;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        blockquote {
+            font-style: italic;
+        }
+    </style>
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
+    <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <!--
+
+    https://pixabay.com/en/mount-kazbek-the-scenery-white-cloud-1531917/
+    https://pixabay.com/en/snow-mountain-the-scenery-cabin-660096/
+    https://pixabay.com/en/staircase-interior-stairs-1677349/
+    https://pixabay.com/en/groynes-sea-baltic-sea-339250/
+    https://pixabay.com/en/groynes-sea-baltic-sea-339251/
+    https://pixabay.com/en/rio-de-janeiro-urca-brazil-1683701/
+    https://en.wikipedia.org/wiki/Mount_Ellinor#/media/File:Mount_Ellinor,_Mount_Washington_Panorama.jpg
+    https://pixabay.com/en/corn-mais-imitate-ear-food-cereals-1680647/
+    https://pixabay.com/en/umbrella-street-color-1678327/
+
+    -->
+
+</head>
+<body>
+
+<div id="content">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="my-grid">
+                <style include="app-grid-style">
+                    :host {
+                        --app-grid-columns: 3;
+                        --app-grid-expandible-item-columns: 3;
+                        --app-grid-gutter: 30px;
+                    }
+
+                    .extended {
+                        @apply(--app-grid-expandible-item);
+                    }
+                </style>
+                <template>
+                    <ul class="app-grid">
+                        <li>
+                            <img width="100%" src="groynes-339250_640.jpg"/>
+                        </li>
+                        <li>
+                            <img width="100%" height="" src="rio-de-janeiro-1683701_640.jpg"/>
+                        </li>
+                        <li>
+                            <demo-page label="Grid layout!" path="grid"></demo-page>
+                            <blockquote cite="https://elements.polymer-project.org/elements/app-layout?active=app-grid">
+                                app-grid is a helper class useful for creating responsive, fluid grid layouts using
+                                custom properties. Because custom properties can be defined inside a @media rule, you
+                                can customize the grid layout for different responsive breakpoints.
+                            </blockquote>
+                            <p>from <a href="https://elements.polymer-project.org/elements/app-layout?active=app-grid">https://elements.polymer-project.org/elements/app-layout?active=app-grid</a>
+                            </p>
+                        </li>
+                        <li class="extended">
+                            <img width="100%" src="Mount_Ellinor,_Mount_Washington_Panorama.jpg"/>
+                        </li>
+                        <li>
+                            <h1>Pictures</h1>
+                            <ul>
+                                <li><a href="https://pixabay.com/en/groynes-sea-baltic-sea-339250/">https://pixabay.com/en/groynes-sea-baltic-sea-339250/</a>
+                                </li>
+                                <li><a href="https://pixabay.com/en/rio-de-janeiro-urca-brazil-1683701/">https://pixabay.com/en/rio-de-janeiro-urca-brazil-1683701/</a>
+                                </li>
+                                <li>
+                                    <a href="https://en.wikipedia.org/wiki/Mount_Ellinor#/media/File:Mount_Ellinor,_Mount_Washington_Panorama.jpg">https://en.wikipedia.org/wiki/Mount_Ellinor#/media/
+                                        File:Mount_Ellinor,_Mount_Washington_Panorama.jpg</a></li>
+                                <li><a href="https://pixabay.com/en/umbrella-street-color-1678327/">https://pixabay.com/en/umbrella-street-color-1678327/</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img width="100%" src="umbrella-1678327_640.jpg"/>
+                        </li>
+                        <li>
+                            <img width="100%" src="umbrella-1678327_640.jpg"/>
+                        </li>
+                    </ul>
+                </template>
+                <script>
+                    Polymer({
+                        is: "my-grid"
+                    });
+                </script>
+            </dom-module>
+
+            <my-grid></my-grid>
+
+        </template>
+    </demo-snippet>
+
+
+</div>
+
+</body>
+</html>

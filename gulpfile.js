@@ -6,6 +6,6 @@ gulp.task("default", function () {
         .pipe(webserver({
             livereload: true,
             directoryListing: true,
-            open: true,
+            open: true
         }));
 });
