@@ -30,13 +30,32 @@
     <script>
         Polymer({
             is: "link-forward",
-            behaviors: [PagesList],
+            behaviors: [
+                PagesList,
+                Polymer.IronA11yKeysBehavior
+            ],
+            properties: {
+                keyEventTarget: {
+                    type: Object,
+                    value: function () {
+                        return document.body;
+                    }
+                }
+            },
             _nextPage: function (currentPage) {
                 var currentIndex = this.pages.indexOf(currentPage);
                 return this.pages[currentIndex + 1];
             },
             _isNext: function (currentPage) {
                 return this._nextPage(currentPage) != undefined;
+            },
+            keyBindings: {
+                'right': '_moveForward'
+            },
+            _moveForward: function () {
+                if(this._isNext(this.page)) {
+                    window.location.href = "../" + this._nextPage(this.page) + "/index.html";
+                }
             }
         });
     </script>

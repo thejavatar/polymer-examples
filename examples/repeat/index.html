@@ -1,0 +1,113 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-image/iron-image.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        iron-image {
+            width: 300px;
+            height: 300px;
+        }
+
+        .pic {
+            display: inline-block;
+            margin-right: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            padding-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .pic h1 {
+            font-family: Arial;
+            text-align: center;
+            background-color: inherit;
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: gray;
+        }
+
+        .footer ul {
+            margin-top: 0;
+        }
+
+    </style>
+
+    <!--
+
+     https://pixabay.com/en/puppy-dog-domestic-animal-beige-758126/
+     https://pixabay.com/en/pet-cat-small-cat-melancholy-882448/
+     http://evandeciren.deviantart.com/art/Star-Wars-Darth-Vader-325847199
+     http://evandeciren.deviantart.com/art/James-Bond-Roger-Moore-325650753
+     http://evandeciren.deviantart.com/art/Batman-The-Dark-Knight-318941872?q=EvanDeCiren%2F38876552&qo=0
+     http://evandeciren.deviantart.com/art/God-of-War-Ghost-of-Sparta-319378990?q=EvanDeCiren%2F38876549&qo=3
+
+     -->
+
+
+</head>
+<body>
+
+<demo-page label="Repeat template" path="repeat">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <template is="dom-repeat" items="{{pictures}}">
+                        <div class="pic">
+                            <h1>{{item.name}}</h1>
+                            <iron-image sizing="contain" src="./{{item.url}}"></iron-image>
+                        </div>
+                    </template>
+
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        ready: function () {
+                            this.pictures = [
+                                {name: 'Darth Vader', url: 'star_wars___darth_vader_by_evandeciren-d5e01b3.jpg'},
+                                {name: 'James Bond', url: 'james_bond___roger_moore_by_evandeciren-d5dvtq9.jpg'},
+                                {name: 'Batman', url: 'batman___the_dark_knight_by_evandeciren-d59w14g.jpg'},
+                                {name: 'Iron Man', url: 'iron_man___armored_adventures_by_evandeciren-d5bn755.jpg'},
+                                {name: 'Kratos', url: 'god_of_war___ghost_of_sparta_by_evandeciren-d5a5eem.jpg'},
+                                {name: 'Puppy', url: 'puppy-758126_640.jpg'},
+                                {name: 'Kitten', url: 'pet-882448_640.jpg'},
+                            ];
+                        }
+                    });
+                </script>
+            </dom-module>
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+    <div class="footer">
+        Pictures from:
+        <ul>
+            <li>https://pixabay.com/en/puppy-dog-domestic-animal-beige-758126/
+            <li>https://pixabay.com/en/pet-cat-small-cat-melancholy-882448/
+            <li>http://evandeciren.deviantart.com/art/Star-Wars-Darth-Vader-325847199
+            <li>http://evandeciren.deviantart.com/art/James-Bond-Roger-Moore-325650753
+            <li>http://evandeciren.deviantart.com/art/Batman-The-Dark-Knight-318941872?q=EvanDeCiren%2F38876552&qo=0
+            <li>http://evandeciren.deviantart.com/art/God-of-War-Ghost-of-Sparta-319378990?q=EvanDeCiren%2F38876549&qo=3
+        </ul>
+    </div>
+
+</demo-page>
+
+</body>
+</html>

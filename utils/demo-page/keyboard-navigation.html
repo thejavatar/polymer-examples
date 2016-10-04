@@ -1,0 +1,27 @@
+<script>
+    KeyboardNavigation = {
+
+        behaviors: [
+            Polymer.IronA11yKeysBehavior
+        ],
+
+        properties: {
+            keyEventTarget: {
+                type: Object,
+                value: function () {
+                    return document.body;
+                }
+            }
+        },
+
+        keyBindings: {
+            'right': '_moveForward'
+        },
+
+        _moveForward: function () {
+            console.log('Test');
+            //window.location.href = "../" + this._nextPage(this.page) + "/index.html";
+        }
+
+    };
+</script>

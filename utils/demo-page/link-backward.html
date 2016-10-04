@@ -29,13 +29,29 @@
     <script>
         Polymer({
             is: "link-backward",
-            behaviors: [PagesList],
+            behaviors: [PagesList, Polymer.IronA11yKeysBehavior],
+            properties: {
+                keyEventTarget: {
+                    type: Object,
+                    value: function () {
+                        return document.body;
+                    }
+                }
+            },
             _previousPage: function (currentPage) {
                 var currentIndex = this.pages.indexOf(currentPage);
                 return this.pages[currentIndex - 1];
             },
             _isPrevious: function (currentPage) {
                 return this._previousPage(currentPage) != undefined;
+            },
+            keyBindings: {
+                'left': '_moveBackward'
+            },
+            _moveBackward: function () {
+                if (this._isPrevious(this.page)) {
+                    window.location.href = "../" + this._previousPage(this.page) + "/index.html";
+                }
             }
         });
     </script>
