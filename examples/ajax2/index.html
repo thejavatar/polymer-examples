@@ -1,0 +1,82 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        .person {
+            font-size: 1.1em;
+            margin: 10px;
+            padding: 5px 25px;
+        }
+
+        .person:hover {
+            background: AliceBlue;
+        }
+
+        .person p {
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+
+        h2 {
+            margin: 10px;
+            padding: 5px 25px;
+        }
+
+        h2 span {
+            color: dodgerblue;
+        }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Ajax - Response handler" path="ajax2" documentation="https://elements.polymer-project.org/elements/iron-ajax">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <iron-ajax
+                            auto
+                            url="https://jsonplaceholder.typicode.com/users"
+                            handle-as="json"
+                            on-response="_handleResponse"></iron-ajax>
+                    <h2>Found <span>{{count}}</span> people.</h2>
+                    <template is="dom-repeat" items={{users}}>
+                        <div class="person">
+                            <p><strong>{{item.name}}</strong></p>
+                            <p><em>from {{item.address.street}}, {{item.address.city}}</em></p>
+                        </div>
+                    </template>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        _handleResponse: function (response) {
+                            this.count = response.detail.response.length;
+                            this.users = response.detail.response;
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>
