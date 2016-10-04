@@ -20,6 +20,12 @@
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
+    <style>
+        h3 span {
+            color: red;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -29,12 +35,12 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
-                    <paper-dropdown-menu label="Select free topping">
+                    <paper-dropdown-menu label="Select free topping" selected-item-label="{{selected}}">
                         <paper-listbox class="dropdown-content">
-                            <paper-item>Pepperoni</paper-item>
-                            <paper-item>Mushrooms</paper-item>
-                            <paper-item>Ananas</paper-item>
-                            <paper-icon-item>
+                            <paper-item label="Pepperoni">Pepperoni</paper-item>
+                            <paper-item label="Mushrooms">Mushrooms</paper-item>
+                            <paper-item label="Ananas">Ananas</paper-item>
+                            <paper-icon-item label="Combo Pizza!">
                                 <iron-icon icon="maps:local-pizza" item-icon></iron-icon>
                                 <paper-item-body two-line>
                                     <div>Another pizza!</div>
@@ -45,6 +51,8 @@
                     </paper-dropdown-menu>
                     <br/>
                     <img width="400px" src="./pizza.jpg"/>
+                    <br/>
+                    <h3>User has selected: <span>{{selected}}</span></h3>
                 </template>
                 <script>
                     Polymer({
