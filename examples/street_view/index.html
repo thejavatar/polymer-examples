@@ -14,6 +14,10 @@
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
+        google-streetview-pano {
+            display: block;
+            height: 400px;
+        }
     </style>
 
 </head>
@@ -23,25 +27,14 @@
 
     <demo-snippet>
         <template>
-            <dom-module id="polymer-demo">
-                <template>
-                    <google-streetview-pano
-                            api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA"
-                            pano-id="CWskcsTEZBNXaD8gG-zATA"
-                            heading="330"
-                            pitch="-2"
-                            zoom="0.8"
-                            disable-default-ui>
-                    </google-streetview-pano>
-                </template>
-                <script>
-                    Polymer({
-                        is: "polymer-demo"
-                    });
-                </script>
-            </dom-module>
-
-            <polymer-demo></polymer-demo>
+            <google-streetview-pano
+                    api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA"
+                    pano-id="CWskcsTEZBNXaD8gG-zATA"
+                    heading="330"
+                    pitch="-2"
+                    zoom="0.8"
+                    disable-default-ui>
+            </google-streetview-pano>
         </template>
     </demo-snippet>
 
