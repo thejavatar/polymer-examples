@@ -9,6 +9,9 @@
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
 
+    <link rel="import" href="../../bower_components/paper-button/paper-button.html"/>
+    <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html"/>
+
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
@@ -17,16 +20,38 @@
 </head>
 <body>
 
-<demo-page label="Dialog" path="dialog">
+<demo-page label="Dialog" path="dialog" documentation="https://elements.polymer-project.org/elements/paper-dialog">
 
     <demo-snippet>
         <template>
             <dom-module id="polymer-demo">
                 <template>
+                    <style>
+                        paper-button {
+                            background: #3c3c3c;
+                            color: white;
+                        }
+                    </style>
+
+                    <paper-dialog modal="true">
+                        <h1>Hello!</h1>
+                        <p>This is an example dialog :) Dialogs are supposed to give you some side information without
+                            reloading the page.</p>
+                        <p></p>
+                        <div>
+                            <paper-button dialog-confirm autofocus>Understood!</paper-button>
+                        </div>
+                    </paper-dialog>
+
+                    <paper-button raised on-click="_toggle">Fire up dialog</paper-button>
+
                 </template>
                 <script>
                     Polymer({
-                        is: "polymer-demo"
+                        is: "polymer-demo",
+                        _toggle: function () {
+                            this.$$('paper-dialog').toggle();
+                        }
                     });
                 </script>
             </dom-module>
