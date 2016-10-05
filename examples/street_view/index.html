@@ -9,7 +9,7 @@
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
 
-    <link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html"/>
+    <link rel="import" href="../../bower_components/google-streetview-pano/google-streetview-pano.html"/>
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
@@ -25,6 +25,14 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
+                    <google-streetview-pano
+                            api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA"
+                            pano-id="CWskcsTEZBNXaD8gG-zATA"
+                            heading="330"
+                            pitch="-2"
+                            zoom="0.8"
+                            disable-default-ui>
+                    </google-streetview-pano>
                 </template>
                 <script>
                     Polymer({
