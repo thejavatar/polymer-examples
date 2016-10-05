@@ -1,0 +1,84 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+
+    <link rel="import" href="../../bower_components/paper-slider/paper-slider.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        .slider {
+            width: 400px;
+            margin-top: 15px;
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        .slider p {
+            margin-left: 15px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Slider" path="slider">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <style>
+                        paper-slider {
+                            --paper-slider-knob-color: var(--paper-red-500);
+                            --paper-slider-active-color: pink;
+                            --paper-slider-height: 5px;
+                            --paper-slider-pin-color: pink;
+                            --paper-slider-font-color: black;
+                            width: 400px;
+                        }
+                    </style>
+                    <div class="slider">
+                        <paper-slider min="0" max="100" value="{{selected}}"></paper-slider>
+                        <p>Selected value is: {{selected}}</p>
+                    </div>
+                    <div class="slider">
+                        <paper-slider min="0" max="100" value="{{selected2}}" editable></paper-slider>
+                        <p>Selected value is: {{selected2}}</p>
+                    </div>
+                    <div class="slider">
+                        <paper-slider min="0" max="100" value="{{selected3}}" pin></paper-slider>
+                        <p>Selected value is: {{selected3}}</p>
+                    </div>
+                    <div class="slider">
+                        <span>0</span><span style="float:right">100</span>
+                        <paper-slider min="0" max="100" value="{{selected4}}" snaps pin step="10"></paper-slider>
+                        <p>Selected value is: {{selected4}}</p>
+                    </div>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo"
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>

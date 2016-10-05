@@ -1,0 +1,87 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+
+    <link rel="import" href="../../bower_components/paper-button/paper-button.html"/>
+    <link rel="import" href="../../bower_components/paper-toast/paper-toast.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        #container {
+            padding: 100px;
+            border: 1px solid lightgray;
+        }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Notifications" path="notifications">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <style>
+                        paper-button {
+                            background: #3c3c3c;
+                            color: white;
+                        }
+                        paper-toast {
+                            font-size: 1.5em;
+                        }
+                    </style>
+                    <div id="container">
+                        <paper-button id="button" raised on-click="_createNotification">Try me!</paper-button>
+                        <paper-toast id="toast"></paper-toast>
+                    </div>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        properties: {
+                            counter: {
+                                type: Number,
+                                value: 0
+                            },
+                            messages: {
+                                type: Array,
+                                value: [
+                                    'Hello World!',
+                                    'Stop!',
+                                    'I said stop!',
+                                    'Come on, dude...',
+                                ]
+                            }
+                        },
+                        _createNotification: function () {
+                            this.$.toast.text = this._getNotificationText();
+                            this.$.toast.fitInto = this.$.container;
+                            this.$.toast.open();
+                        },
+                        _getNotificationText: function () {
+                            if (this.counter == this.messages.length) {
+                                this.counter = 0;
+                            }
+                            return this.messages[this.counter++];
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>

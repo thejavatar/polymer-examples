@@ -29,3 +29,7 @@ paper-button.fancy {
     background: forestgreen;
     color: white;
 }
+
+#code .demo-snippet {
+    font-size: 1.1em;
+}

@@ -8,25 +8,14 @@
 
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
-    <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-    <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../bower_components/paper-input/paper-input.html">
+    <link rel="import" href="../../bower_components/iron-image/iron-image.html">
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
-        .person {
-            font-size: 1.1em;
-            margin: 10px;
-            padding: 5px 25px;
-        }
-
-        .person:hover {
-            background: AliceBlue;
-        }
-
-        .person p {
-            margin-top: 3px;
-            margin-bottom: 3px;
+        iron-icon {
+            color: red
         }
     </style>
 
@@ -39,10 +28,17 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
+                    <paper-input label="Tell me a secret" value="{{secret}}"></paper-input>
+                    <template is="dom-if" if="{{_wasSecretDiscovered(secret)}}">
+                        <iron-image src="./1024px-2012-08-19_16-44-22_Switzerland_Kanton_Graubünden_Morteratsch.JPG"></iron-image>
+                    </template>
                 </template>
                 <script>
                     Polymer({
-                        is: "polymer-demo"
+                        is: "polymer-demo",
+                        _wasSecretDiscovered : function (secret) {
+                            return secret == "Switzerland";
+                        }
                     });
                 </script>
             </dom-module>
