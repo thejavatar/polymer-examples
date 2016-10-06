@@ -11,6 +11,10 @@
 
     <link rel="import" href="../../bower_components/google-streetview-pano/google-streetview-pano.html"/>
 
+    <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="../../bower_components/paper-item/paper-item.html">
+    <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
@@ -18,23 +22,79 @@
             display: block;
             height: 400px;
         }
+
+        .footer {
+            margin-top: 20px;
+            color: gray;
+        }
+
+        .footer ul {
+            margin-top: 0;
+        }
+
+        paper-dropdown-menu {
+            width: 100%
+        }
     </style>
 
 </head>
 <body>
 
-<demo-page label="Street view" path="street_view">
+<demo-page label="Street view panorama" path="street_view"
+           documentation="https://elements.polymer-project.org/elements/google-streetview-pano">
 
     <demo-snippet>
         <template>
-            <google-streetview-pano
-                    api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA"
-                    pano-id="CWskcsTEZBNXaD8gG-zATA"
-                    heading="330"
-                    pitch="-2"
-                    zoom="0.8"
-                    disable-default-ui>
-            </google-streetview-pano>
+            <dom-module id="polymer-demo">
+                <template>
+
+                    <paper-dropdown-menu label="Select panorama">
+                        <paper-listbox class="dropdown-content">
+                            <template is="dom-repeat" items="{{panoramas}}">
+                                <paper-item on-click="_select" panorama-id="{{item.id}}" zoom="{{item.zoom}}">
+                                    {{item.name}}
+                                </paper-item>
+                            </template>
+                        </paper-listbox>
+                    </paper-dropdown-menu>
+
+                    <google-streetview-pano
+                            api-key="AIzaSyDzkZ3uacdiC_RdEnLTIfrGIbNKVUaIocA"
+                            pano-id="{{panorama}}"
+                            zoom="{{zoom}}"
+                            disable-default-ui>
+                    </google-streetview-pano>
+
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        properties: {
+                            panoramas: {
+                                type: Array,
+                                value: [
+                                    {name: "Coral reef (Oceania)", id: "CWskcsTEZBNXaD8gG-zATA", zoom: 0.4},
+                                    {name: "Machu Pichu (Peru)", id: "VsCKIVGfvpEAAAQJKfdW1w", zoom: 0.4},
+                                    {name: "Read Square (Moscow)", id: "p1Lp-3qJIg1hhZwlG2GW4A", zoom: 0.2},
+                                    {name: "Lion Rock Hill (Hong Kong)", id: "KMtlOGNXXmQAAAAAAABY8g", zoom: 0.1},
+                                    {name: "Arc de Triomphe (Paris)", id: "ULgl_i0tY-sNYdnhev699A", zoom: 0.3},
+                                    {name: "Collosseum (Rome)", id: "rKZYTqQgtL94hv_H1wc9cA", zoom: 0},
+                                    {name: "Under water statues (Gulf of Mexico )", id: "ka645u0MqHoAAAQJKihqnQ", zoom: 0},
+                                    {name: "Whale shark (Oceania)", id: "xq5H2tvkw_AAAAQJLmg-7A", zoom: 0.3},
+                                    {name: "Rio de Janeiro (Brazil)", id: "4uzAc8pszmAAAAAGOtKjmw", zoom: 0.4}
+
+                                ]
+                            }
+                        },
+                        _select: function (e) {
+                            this.panorama = e.target.panoramaId;
+                            this.zoom = e.target.zoom;
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
         </template>
     </demo-snippet>
 
