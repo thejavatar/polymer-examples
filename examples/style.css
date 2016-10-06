@@ -33,3 +33,40 @@ paper-button.fancy {
 #code .demo-snippet {
     font-size: 1.1em;
 }
+
+.info-sheet {
+    border-top: 2px solid whitesmoke;
+    margin-top: 0;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.info-sheet h1 {
+    font-size: 4em;
+    font-family: "Garamond";
+}
+
+.info-sheet h2 {
+    margin-left: 25px;
+    margin-right: 25px;
+    color: dimgray;
+    font-family: Arial;
+}
+
+.navigation-label {
+    font-family: "Garamond";
+}
+
+.info-sheet ul {
+    width: 50%;
+    margin: 2em auto;
+    font-size: 3em;
+    font-family: Avenir, Calibri;
+}
+
+.info-sheet li {
+    text-align: left;
+}
+

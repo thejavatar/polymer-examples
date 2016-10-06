@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <style>
+
+        h1#leading {
+            text-transform: uppercase;
+            font-family: "Garamond";
+            letter-spacing: 10px;
+            margin-top: 60px;
+            font-size: 4.5em;
+        }
+
+        .info-sheet h1 + h1 {
+            font-style: italic;
+            font-size: 3em;
+            margin-top: 20px;
+            margin-top: 20px;
+            font-family: "Reenie Beanie"
+        }
+
+        .info-sheet h2 {
+            margin-top: 150px;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+    </style>
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../bower_components/google-map/google-map.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+</head>
+<body>
+
+<demo-page label="" path="intro" >
+
+    <div class="info-sheet">
+        <h1 id="leading">Polymer to the rescue</h1>
+        <h1>create web applications <span>faster</span><br/> and <span>with ease</span></h1>
+        <h2>Lukasz Janicki, October 2016</h2>
+    </div>
+
+</demo-page>
+
+</body>
+</html>
