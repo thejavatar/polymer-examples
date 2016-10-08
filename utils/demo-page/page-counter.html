@@ -5,13 +5,6 @@
 
 <dom-module id="page-counter">
     <template>
-        <style>
-            :host {
-                font-weight: lighter;
-                color: gray;
-                float: right;
-            }
-        </style>
         ({{_getCurrent(page)}}/{{_getTotal(page)}})
     </template>
     <script>

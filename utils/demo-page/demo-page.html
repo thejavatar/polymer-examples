@@ -4,17 +4,23 @@
 <link rel="import" href="link-backward.html">
 <link rel="import" href="page-counter.html">
 <link rel="import" href="keyboard-navigation.html">
+<link rel="import" href="time-counter.html">
 <link href="https://fonts.googleapis.com/css?family=Garamond|Reenie+Beanie" rel="stylesheet">
 
 <dom-module id="demo-page">
     <template>
         <style>
+		.right {
+			float: right;
+            font-weight: lighter;
+            color: gray;
+		}
         </style>
         <div id="content">
 
             <h1>
                 <link-backward page="{{path}}"></link-backward>
-                <span class="navigation-label">{{label}} <page-counter page="{{path}}"></page-counter></span>
+                <span class="navigation-label">{{label}} <span class="right"><!--<time-counter></time-counter>--> <page-counter page="{{path}}"></page-counter></span></span>
                 <link-forward page="{{path}}"></link-forward>
                 <template is="dom-if" if="{{_isDoc(documentation)}}">
                     <small class="navigation-label"><a href="{{documentation}}">See documentation</a></small>

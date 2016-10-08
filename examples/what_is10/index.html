@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Garamond|Reenie+Beanie" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/iron-image/iron-image.html">
+	
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+	
+	<style>
+    iron-image {
+        width: 400px;
+        height: 400px;
+    }
+	</style>
+
+</head>
+<body>
+
+<demo-page label="What is Polymer?" path="what_is10">
+
+    <div class="info-sheet">
+        <h1>It's like LEGO bricks</h1>
+        <iron-image src="Lego_dublo_arto_alanenpaa_5.JPG" sizing="contain"></iron-image>
+    </div>
+
+</demo-page>
+
+</body>
+</html>

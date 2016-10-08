@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+</head>
+<body>
+
+<demo-page label="What is Polymer?" path="what_is6">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+					<style>
+					:host {
+						font-weight: bold;
+					}						
+					</style>
+                    Well, Hello World!
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo"
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>

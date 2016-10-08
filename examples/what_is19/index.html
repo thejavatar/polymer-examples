@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+	
+	    <link rel="import" href="../../bower_components/iron-image/iron-image.html"/>
+		
+		<!-- https://en.wikipedia.org/wiki/File:Mozilla-Firefox-4-free-Logo1.jpg -->
+		<!-- https://commons.wikimedia.org/wiki/File:Opera_2015_icon.svg -->
+		<!-- https://commons.wikimedia.org/wiki/File:Internet_Explorer_10_logo.svg -->
+		<!-- https://commons.wikimedia.org/wiki/File:Compass_icon_matte.svg -->
+		<!-- https://commons.wikimedia.org/wiki/File:IOS7_Logo.png -->
+		<!-- https://commons.wikimedia.org/wiki/File:Android_dance.svg -->
+		<style>
+			iron-image {
+				width: 150px;
+				height: 150px;
+				margin-right: 50px;
+			}
+			
+			.info-sheet h1{
+				margin-bottom: 0.2em;
+			}
+		</style>
+
+</head>
+<body>
+
+<demo-page label="What is Polymer?" path="what_is19">
+
+    <div class="info-sheet">
+        <h1>Meaning we can use them everywhere!</h1>
+		<iron-image sizing="contain" src="./Opera_2015_icon.svg.png"></iron-image>			<iron-image sizing="contain" src="./Google_Chrome_for_Android_Icon_2016.svg.png"></iron-image><iron-image sizing="contain" src="./Mozilla-Firefox-4-free-Logo1.jpg"></iron-image>	
+		<iron-image sizing="contain" src="./Internet_Explorer_10_logo.svg.png"></iron-image>	<iron-image sizing="contain" src="./Compass_icon_matte.svg.png"></iron-image>	<iron-image sizing="contain" src="./IOS7_Logo.png"></iron-image>	<iron-image sizing="contain" src="./256px-Android_dance.svg.png"></iron-image>	
+		
+    </div>
+
+</demo-page>
+
+</body>
+</html>
