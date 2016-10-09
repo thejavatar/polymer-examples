@@ -35,7 +35,8 @@
                 </style>
                 <template>
                     <paper-toggle-button>
-                        <span>Hidden</span>
+                    <!--<paper-toggle-button on-click="_showHide">-->
+                        <span>Try me!</span>
                     </paper-toggle-button>
                     <iron-collapse>
                         <h1>How come you can see me?</h1>
@@ -53,11 +54,6 @@
                         },
                         _showHide: function () {
                             this.$$("iron-collapse").toggle();
-                            if (this.$$("span").innerHTML == 'Hidden') {
-                                this.$$("span").innerHTML = 'Visible';
-                            } else {
-                                this.$$("span").innerHTML = 'Hidden';
-                            }
                         }
                     });
                 </script>

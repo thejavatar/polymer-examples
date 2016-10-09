@@ -63,6 +63,7 @@
                             }
                         },
                         _createNotification: function () {
+                        // this.$$('paper-toast').text = ...
                             this.$.toast.text = this._getNotificationText();
                             this.$.toast.fitInto = this.$.container;
                             this.$.toast.open();

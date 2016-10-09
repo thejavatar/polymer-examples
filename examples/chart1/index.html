@@ -1,0 +1,68 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+	<link rel="import" href="../../bower_components/chart-elements/chart-bar.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+		chart-bar {
+			width: 800px;
+		}
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Bar chart" path="chart1">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+					<h3>Sales on Steam in 2015</h3>
+					<chart-bar data="{{data}}"></chart-bar>					
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+						ready: function() {
+							this.data = {
+							  labels: ["May", "June", "July", "August", "September", "October", "November"],
+							  datasets: [
+							    {
+							      label: "Witcher",
+							      backgroundColor: "rgba(220,220,220,0.2)",
+							      borderColor: "rgba(220,220,220,1)",
+							      borderWidth: 1,
+							      data: [541965, 135870, 41918, 47876, 83069, 0, 113742]
+							    },
+							    {
+							      label: "GTA V",
+							      backgroundColor: "rgba(151,187,205,0.2)",
+							      borderColor: "rgba(151,187,205,1)",
+							      borderWidth: 1,
+							      data: [352006, 244078, 154776, 109534, 92675, 174957, 224114]
+							    }
+							  ]
+							};
+						}
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>
