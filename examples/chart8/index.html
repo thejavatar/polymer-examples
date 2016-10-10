@@ -1,0 +1,103 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/google-chart/google-chart.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        google-chart {
+                    width: 800px;
+                }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Organization chart" path="chart8">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <h3>Our group hierarchy</h3>
+                    <google-chart
+                            id="org-chart" ,
+                            type="org" ,
+                            options='{"allowHtml": "true"}'
+                            cols='[{"label": "Name", "type": "string"},{"label":"Manager", "type":"string"}]'>
+                    </google-chart>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        ready: function () {
+                            this.$$("google-chart").rows = [
+                                [
+                                    {
+                                        "v": "FAP-AIS",
+                                        "f": "FAP-AIS"
+                                    },
+                                    ""
+                                ],
+                                [
+                                    {
+                                        "v": "FAP-AIS-EB",
+                                        "f": "FAP-AIS-EB"
+                                    },
+                                    "FAP-AIS"
+                                ],
+                                [
+                                    {
+                                        "v": "FAP-AIS-FP",
+                                        "f": "FAP-AIS-FP"
+                                    },
+                                    "FAP-AIS"
+                                ],
+                                [
+                                    {
+                                        "v": "FAP-AIS-GI",
+                                        "f": "FAP-AIS-GI"
+                                    },
+                                    "FAP-AIS"
+                                ],
+                                [
+                                    {
+                                        "v": "FAP-AIS-HR",
+                                        "f": "FAP-AIS-HR"
+                                    },
+                                    "FAP-AIS"
+                                ],
+                                [
+                                    {
+                                        "v": "FAP-AIS-PM",
+                                        "f": "FAP-AIS-PM"
+                                    },
+                                    "FAP-AIS"
+                                ],
+                                ["N. Decrevel", "FAP-AIS-EB"],
+                                ["W. Van Leersum", "FAP-AIS-FP"],
+                                ["J. Janke", "FAP-AIS-GI"],
+                                ["G. Chierico", "FAP-AIS-HR"],
+                                ["B. Daudin", "FAP-AIS-PM"]
+                            ];
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+</body>
+</html>

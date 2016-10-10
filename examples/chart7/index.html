@@ -1,0 +1,88 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/google-chart/google-chart.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        google-chart {
+            height: 600px;
+            width: 800px;
+        }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Geographical chart" path="chart7">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <h3>Total Aircraft Inventory Strength (Europe & Asia)</h3>
+                    <google-chart type="geo" data="{{data}}"></google-chart>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        ready: function () {
+                            this.data = [["Country", "Aircrafts"],
+                                ["Russia", 3547],
+                                ["Germany", 676],
+                                ["France", 1282],
+                                ["Japan", 1590],
+                                ["Ukraine", 234],
+                                ["Spain", 540],
+                                ["Poland", 461],
+                                ["Italy", 785],
+                                ["Turkey", 1007],
+                                ["North Korea", 944],
+                                ["South Korea", 1451],
+                                ["India", 2086],
+                                ["Greece", 601],
+                                ["United Kingdom", 879],
+                                ["Vietnam", 289],
+                                ["Pakistan", 923],
+                                ["Taiwan", 815],
+                                ["Thailand", 551],
+                                ["Greece", 601],
+                                ["Israel", 681],
+                                ["Iran", 479],
+                                ["Norway", 104],
+                                ["Netherlands", 164],
+                                ["Indonesia", 420],
+                                ["Kazakhstan", 244],
+                                ["Afghanistan", 185],
+                                ["Mongolia", 10],
+                                ["Sweden", 228],
+                                ["Finland", 155],
+                                ["China", 2942]];
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+<div class="footer">
+    Data from:
+    <ul>
+        <li>http://www.globalfirepower.com/aircraft-total.asp
+    </ul>
+</div>
+
+</body>
+</html>

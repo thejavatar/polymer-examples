@@ -1,0 +1,71 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/google-chart/google-chart.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        google-chart {
+            width: 800px;
+        }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Timeline chart" path="chart9">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <h3>Windows Support</h3>
+                    <google-chart
+                            type="timeline"
+                            data="{{data}}"
+                    >
+                    </google-chart>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        ready: function () {
+                            var self = this;
+                            document.createElement('google-chart-loader').dataTable([
+                                ['Name', 'Start', 'End'],
+                                ['Win XP', new Date(2001, 12, 31), new Date(2009, 4, 14)],
+                                ['Win Vista', new Date(2007, 1, 30), new Date(2012, 4, 10)],
+                                ['Win 7', new Date(2009, 10, 22), new Date(2015, 1, 13)],
+                                ['Win 8', new Date(2012, 10, 18), new Date(2018, 1, 9)],
+                                ['Win 10', new Date(2015, 7, 29), new Date(2020, 10, 13)]
+                            ]).then(function (dataTable) {
+                                self.data = dataTable;
+                            });
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+<div class="footer">
+    Data from:
+    <ul>
+        <li>https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet
+    </ul>
+</div>
+
+</body>
+</html>

@@ -73,3 +73,11 @@ paper-button.fancy {
     color: red;
 }
 
+.footer {
+    margin-top: 20px;
+    color: gray;
+}
+
+.footer ul {
+    margin-top: 0;
+}

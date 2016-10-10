@@ -1,0 +1,73 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/google-chart/google-chart.html"/>
+
+    <link rel="import" href="../../utils/demo-page/demo-page.html">
+
+    <style>
+        google-chart {
+            width: 800px;
+        }
+    </style>
+
+</head>
+<body>
+
+<demo-page label="Bubble chart" path="chart6">
+
+    <demo-snippet>
+        <template>
+            <dom-module id="polymer-demo">
+                <template>
+                    <google-chart
+                            type="bubble"
+                            data="{{data}}"
+                    >
+                    </google-chart>
+                </template>
+                <script>
+                    Polymer({
+                        is: "polymer-demo",
+                        ready: function () {
+                            this.data =
+                                    [["ID", "Area [m sq]", "Population [m]", "Country", "GDP per capita"],
+                                        ["USA", 9.16, 324.1, "USA", 49965.27],
+                                        ["RUS", 17, 144.19, "Russia", 14037.03],
+                                        ["IND", 2.97, 1220, "India", 1489.24],
+                                        ["CHN", 9.33, 1350, "China", 6188.19],
+                                        ["CAN", 9.09, 36.29, "Canada", 52218.99]];
+                            this.$$("google-chart").options = {
+                                title: "Countries juxtaposition",
+                                hAxis: {title: "Area", minValue: 0, maxValue: 20},
+                                vAxis: {title: "Population"},
+                                legend: "none"
+                            };
+                        }
+                    });
+                </script>
+            </dom-module>
+
+            <polymer-demo></polymer-demo>
+        </template>
+    </demo-snippet>
+
+</demo-page>
+
+<div class="footer">
+    Data from:
+    <ul>
+        <li>https://en.wikipedia.org
+        <li>http://www.nationmaster.com
+    </ul>
+</div>
+
+</body>
+</html>
