@@ -11,25 +11,26 @@
     <link rel="import" href="../../bower_components/paper-time-picker/paper-time-picker.html">
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
-	
-	<style>
-		paper-time-picker {
-			margin-bottom: 20px;
-		}
-	</style>
+
+    <style>
+        paper-time-picker {
+            margin-bottom: 20px;
+        }
+    </style>
 
 </head>
 <body>
 
-<demo-page label="Time picker" path="time_picker" documentation="http://bendavis78.github.io/paper-time-picker/paper-time-picker/">
+<demo-page label="Time picker" path="time_picker"
+           documentation="http://bendavis78.github.io/paper-time-picker/paper-time-picker/">
 
     <demo-snippet>
         <template>
             <dom-module id="polymer-demo">
                 <template>
-					<paper-time-picker time={{time}}></paper-time-picker>
-					<p>Selected: {{time}}</p>
-				                </template>
+                    <paper-time-picker time={{time}}></paper-time-picker>
+                    <p>Selected: {{time}}</p>
+                </template>
                 <script>
                     Polymer({
                         is: "polymer-demo"

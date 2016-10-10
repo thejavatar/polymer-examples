@@ -11,25 +11,27 @@
     <link rel="import" href="../../bower_components/polymer-paper-date-picker/paper-date-picker.html">
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
-	
-	<style>
-		paper-date-picker {
-			margin-bottom: 20px;
-		}
-	</style>
+
+    <style>
+        paper-date-picker {
+            margin-bottom: 20px;
+        }
+    </style>
 
 </head>
 <body>
 
-<demo-page label="Date picker" path="date_picker" documentation="http://bendavis78.github.io/paper-date-picker/paper-date-picker/">
+<demo-page label="Date picker" path="date_picker"
+           documentation="http://bendavis78.github.io/paper-date-picker/paper-date-picker/">
 
     <demo-snippet>
         <template>
             <dom-module id="polymer-demo">
                 <template>
-					<paper-date-picker date={{date}} min-date="January 1, 2016" max-date="December 31, 2018"></paper-date-picker>
-					<p>Selected: {{date}}</p>
-				                </template>
+                    <paper-date-picker date={{date}} min-date="January 1, 2016"
+                                       max-date="December 31, 2018"></paper-date-picker>
+                    <p>Selected: {{date}}</p>
+                </template>
                 <script>
                     Polymer({
                         is: "polymer-demo"

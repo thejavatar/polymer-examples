@@ -8,14 +8,14 @@
 
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
-	<link rel="import" href="../../bower_components/chart-elements/chart-line.html"/>
+    <link rel="import" href="../../bower_components/chart-elements/chart-line.html"/>
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
-		chart-line {
-			width: 800px;
-		}
+        chart-line {
+            width: 800px;
+        }
     </style>
 
 </head>
@@ -27,41 +27,41 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
-					<h3>Sales on Steam in 2015</h3>
-					<chart-line data="{{data}}"></chart-line>					
+                    <h3>Sales on Steam in 2015</h3>
+                    <chart-line data="{{data}}"></chart-line>
                 </template>
                 <script>
                     Polymer({
                         is: "polymer-demo",
-						ready: function() {
-							this.data = {
-							  labels: ["May", "June", "July", "August", "September", "October", "November"],
-							  datasets: [
-							    {
-							      label: "Witcher 3",
-							      backgroundColor: "rgba(220,220,220,0.2)",
-							      borderColor: "rgba(220,220,220,1)",
-							      borderWidth: 1,
-							      pointBackgroundColor: "rgba(220,220,220,1)",
-							      pointBorderColor: "#fff",
-							      pointHoverBackgroundColor: "#fff",
-							      pointHoverBorderColor: "rgba(220,220,220,1)",
-							      data: [541965, 135870, 41918, 47876, 83069, 0, 113742]
-							    },
-							    {
-							      label: "GTA V",
-							      backgroundColor: "rgba(151,187,205,0.2)",
-							      borderColor: "rgba(151,187,205,1)",
-							      borderWidth: 1,
-							      pointBackgroundColor: "rgba(151,187,205,1)",
-							      pointBorderColor: "#fff",
-							      pointHighlightFill: "#fff",
-							      pointHoverBorderColor: "rgba(151,187,205,1)",
-								  data: [352006, 244078, 154776, 109534, 92675, 174957, 224114]
-							    }
-							  ]
-							};							
-						}
+                        ready: function () {
+                            this.data = {
+                                labels: ["May", "June", "July", "August", "September", "October", "November"],
+                                datasets: [
+                                    {
+                                        label: "Witcher 3",
+                                        backgroundColor: "rgba(220,220,220,0.2)",
+                                        borderColor: "rgba(220,220,220,1)",
+                                        borderWidth: 1,
+                                        pointBackgroundColor: "rgba(220,220,220,1)",
+                                        pointBorderColor: "#fff",
+                                        pointHoverBackgroundColor: "#fff",
+                                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                                        data: [541965, 135870, 41918, 47876, 83069, 0, 113742]
+                                    },
+                                    {
+                                        label: "GTA V",
+                                        backgroundColor: "rgba(151,187,205,0.2)",
+                                        borderColor: "rgba(151,187,205,1)",
+                                        borderWidth: 1,
+                                        pointBackgroundColor: "rgba(151,187,205,1)",
+                                        pointBorderColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHoverBorderColor: "rgba(151,187,205,1)",
+                                        data: [352006, 244078, 154776, 109534, 92675, 174957, 224114]
+                                    }
+                                ]
+                            };
+                        }
                     });
                 </script>
             </dom-module>

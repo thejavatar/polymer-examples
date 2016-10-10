@@ -8,14 +8,14 @@
 
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
-	<link rel="import" href="../../bower_components/chart-elements/chart-radar.html"/>
+    <link rel="import" href="../../bower_components/chart-elements/chart-radar.html"/>
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
-		chart-radar {
-			width: 800px;
-		}
+        chart-radar {
+            width: 800px;
+        }
     </style>
 
 </head>
@@ -27,39 +27,39 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
-					<h3>Best selling movies in history</h3>
-					<chart-radar data="{{data}}"></chart-radar>					
+                    <h3>Best selling movies in history</h3>
+                    <chart-radar data="{{data}}"></chart-radar>
                 </template>
                 <script>
                     Polymer({
                         is: "polymer-demo",
-						ready: function() {
-							this.data = {
-							  labels: ["Production Budget", "US Gross", "Profit", "Wordwide Gross"],
-							  datasets: [
-							      {
-							        label: "Avatar",
-							        backgroundColor: "rgba(179,181,198,0.2)",
-							        borderColor: "rgba(179,181,198,1)",
-							        pointBackgroundColor: "rgba(179,181,198,1)",
-							        pointBorderColor: "#fff",
-							        pointHoverBackgroundColor: "#fff",
-							        pointHoverBorderColor: "rgba(179,181,198,1)",
-							        data: [425, 760, 1269, 2783]
-							      },
-							      {
-							        label: "Star Wars Ep. VII: The Force Awakens",
-							        backgroundColor: "rgba(255,99,132,0.2)",
-							        borderColor: "rgba(255,99,132,1)",
-							        pointBackgroundColor: "rgba(255,99,132,1)",
-							        pointBorderColor: "#fff",
-							        pointHoverBackgroundColor: "#fff",
-							        pointHoverBorderColor: "rgba(255,99,132,1)",
-							        data: [306, 936, 804, 2058]
-							      }
-							    ]
-							  };
-						}
+                        ready: function () {
+                            this.data = {
+                                labels: ["Production Budget", "US Gross", "Profit", "Wordwide Gross"],
+                                datasets: [
+                                    {
+                                        label: "Avatar",
+                                        backgroundColor: "rgba(179,181,198,0.2)",
+                                        borderColor: "rgba(179,181,198,1)",
+                                        pointBackgroundColor: "rgba(179,181,198,1)",
+                                        pointBorderColor: "#fff",
+                                        pointHoverBackgroundColor: "#fff",
+                                        pointHoverBorderColor: "rgba(179,181,198,1)",
+                                        data: [425, 760, 1269, 2783]
+                                    },
+                                    {
+                                        label: "Star Wars Ep. VII: The Force Awakens",
+                                        backgroundColor: "rgba(255,99,132,0.2)",
+                                        borderColor: "rgba(255,99,132,1)",
+                                        pointBackgroundColor: "rgba(255,99,132,1)",
+                                        pointBorderColor: "#fff",
+                                        pointHoverBackgroundColor: "#fff",
+                                        pointHoverBorderColor: "rgba(255,99,132,1)",
+                                        data: [306, 936, 804, 2058]
+                                    }
+                                ]
+                            };
+                        }
                     });
                 </script>
             </dom-module>

@@ -8,14 +8,14 @@
 
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
-	<link rel="import" href="../../bower_components/chart-elements/chart-polar-area.html"/>
+    <link rel="import" href="../../bower_components/chart-elements/chart-polar-area.html"/>
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
-		chart-polar-area {
-			width: 800px;
-		}
+        chart-polar-area {
+            width: 800px;
+        }
     </style>
 
 </head>
@@ -27,30 +27,30 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
-					<h3>Witcher 3 sales on Steam in 2015</h3>
-					<chart-polar-area data="{{data}}"></chart-polar-area>					
+                    <h3>Witcher 3 sales on Steam in 2015</h3>
+                    <chart-polar-area data="{{data}}"></chart-polar-area>
                 </template>
                 <script>
                     Polymer({
                         is: "polymer-demo",
-						ready: function() {
-							this.data = {
-							  datasets: [{
-							    							    data: [541965, 135870, 41918, 47876, 83069, 0, 113742],
-  							    backgroundColor: [
-  							      "#FF6384",
-  							      "#4BC0C0",
-  							      "#FFCE56",
-  							      "#5499C7",
-  							      "#27AE60",
-  							      "#ccc",
-  							      "#873600"									
-  							    ],
-							    label: 'Witcher 3 sales' // for legend
-							  }],
-							  labels: ["May", "June", "July", "August", "September", "October", "November"]
-							};	
-						}
+                        ready: function () {
+                            this.data = {
+                                datasets: [{
+                                    data: [541965, 135870, 41918, 47876, 83069, 0, 113742],
+                                    backgroundColor: [
+                                        "#FF6384",
+                                        "#4BC0C0",
+                                        "#FFCE56",
+                                        "#5499C7",
+                                        "#27AE60",
+                                        "#ccc",
+                                        "#873600"
+                                    ],
+                                    label: 'Witcher 3 sales' // for legend
+                                }],
+                                labels: ["May", "June", "July", "August", "September", "October", "November"]
+                            };
+                        }
                     });
                 </script>
             </dom-module>

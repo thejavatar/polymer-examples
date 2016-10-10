@@ -6,45 +6,45 @@
     <template>
         <style>
         </style>
-       {{_formattedTime(time)}}
-      <!--
-		   <app-localstorage-document key="t" data="{{timerStart}}"></app-localstorage-document>	   
-		  -->
-		  
-	   <app-localstorage-document key="d" data="{{timerStart}}"></app-localstorage-document>	 
-		  
+        {{_formattedTime(time)}}
+        <!--
+             <app-localstorage-document key="t" data="{{timerStart}}"></app-localstorage-document>
+            -->
+
+        <app-localstorage-document key="d" data="{{timerStart}}"></app-localstorage-document>
+
     </template>
     <script>
         Polymer({
             is: "time-counter",
-			properties: {
-				time: {
-					type: Number,
-					value: 0
-				},
-				timerStart: Number
-			},
-			ready: function() {
-			//	this._updateTimer();
-			},
-			_updateTimer: function() {
-				var d = new Date();
-				var current = d.getTime();
-				this.time = current - this.timerStart;		
-				console.log(this.timerStart);
-				//this.async(this._updateTimer, 1000);
-			},			
-			_formattedTime: function(time) {
-				var min = 0;
-				if(time > 60) {
-				   min = Math.round(time / 60);
-			    }
-				var sec = time % 60;
-				if(sec < 10) {
-					sec = "0" + sec;
-				}
-				return min + ":" + sec;
-			}      
+            properties: {
+                time: {
+                    type: Number,
+                    value: 0
+                },
+                timerStart: Number
+            },
+            ready: function () {
+                //	this._updateTimer();
+            },
+            _updateTimer: function () {
+                var d = new Date();
+                var current = d.getTime();
+                this.time = current - this.timerStart;
+                console.log(this.timerStart);
+                //this.async(this._updateTimer, 1000);
+            },
+            _formattedTime: function (time) {
+                var min = 0;
+                if (time > 60) {
+                    min = Math.round(time / 60);
+                }
+                var sec = time % 60;
+                if (sec < 10) {
+                    sec = "0" + sec;
+                }
+                return min + ":" + sec;
+            }
         });
     </script>
 </dom-module>

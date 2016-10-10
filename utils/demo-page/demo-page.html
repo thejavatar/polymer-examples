@@ -10,17 +10,18 @@
 <dom-module id="demo-page">
     <template>
         <style>
-		.right {
-			float: right;
-            font-weight: lighter;
-            color: gray;
-		}
+            .right {
+                float: right;
+                font-weight: lighter;
+                color: gray;
+            }
         </style>
         <div id="content">
 
             <h1>
                 <link-backward page="{{path}}"></link-backward>
-                <span class="navigation-label">{{label}} <span class="right"><!--<time-counter></time-counter>--> <page-counter page="{{path}}"></page-counter></span></span>
+                <span class="navigation-label">{{label}} <span class="right"><!--<time-counter></time-counter>--> <page-counter
+                        page="{{path}}"></page-counter></span></span>
                 <link-forward page="{{path}}"></link-forward>
                 <template is="dom-if" if="{{_isDoc(documentation)}}">
                     <small class="navigation-label"><a href="{{documentation}}">See documentation</a></small>
@@ -39,7 +40,7 @@
                 path: String,
                 documentation: String
             },
-            _isDoc : function (docPath) {
+            _isDoc: function (docPath) {
                 return docPath != undefined && docPath != null;
             }
         });
