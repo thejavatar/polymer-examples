@@ -8,10 +8,15 @@
 
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
+    <link rel="import" href="../../bower_components/google-sheets/google-sheets.html"/>
 
     <link rel="import" href="../../utils/demo-page/demo-page.html">
 
     <style>
+        li {
+            font-size: 1.2em;
+            margin-top: 0.2em;
+        }
     </style>
 
 </head>
@@ -23,11 +28,29 @@
         <template>
             <dom-module id="polymer-demo">
                 <template>
+                    <google-sheets key="1v5LTy_1SWlH-ENmX8RbAd1WlPhsLXJim2U9Gb0la0FE" rows="{{rows}}"
+                                   published></google-sheets>
+                    <h3>Italian female names</h3>
+                    <ul>
+                        <template is="dom-repeat" items="{{rows}}">
+                            <li>{{item.gsx$name.$t}}</li>
+                        </template>
+                    </ul>
+                    <span id="loading-panel">
+                        Loading data ...
+                    </span>
                 </template>
                 <script>
                     Polymer({
-                        is: "polymer-demo"
-                    });
+                        is: "polymer-demo",
+                        ready: function () {
+                            this.listen(this.$$("google-sheets"), 'google-sheet-data', '_hideLoadingPanel');
+                        },
+                        _hideLoadingPanel: function () {
+                            this.$$("#loading-panel").hidden = true;
+                        }
+                    })
+                    ;
                 </script>
             </dom-module>
 
