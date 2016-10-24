@@ -7,11 +7,8 @@
         <style>
         </style>
         {{_formattedTime(time)}}
-        <!--
-             <app-localstorage-document key="t" data="{{timerStart}}"></app-localstorage-document>
-            -->
 
-        <app-localstorage-document key="d" data="{{timerStart}}"></app-localstorage-document>
+        <app-localstorage-document key="e" data="{{timerStart}}"></app-localstorage-document>
 
     </template>
     <script>
@@ -22,17 +19,22 @@
                     type: Number,
                     value: 0
                 },
-                timerStart: Number
+                timerStart: { 
+					type: Number,
+					observer: '_onTimeStart'
+				}
             },
             ready: function () {
-                //	this._updateTimer();
             },
+			_onTimeStart: function(newVal) {
+				this._updateTimer();
+			},
             _updateTimer: function () {
                 var d = new Date();
                 var current = d.getTime();
-                this.time = current - this.timerStart;
-                console.log(this.timerStart);
-                //this.async(this._updateTimer, 1000);
+                this.time = Math.round((current - this.timerStart) / 1000);
+                //console.log(this.time);
+                this.async(this._updateTimer, 1000);
             },
             _formattedTime: function (time) {
                 var min = 0;

@@ -36,18 +36,45 @@
     <link rel="import" href="../../bower_components/polymer/polymer.html"/>
     <link rel="import" href="../../bower_components/iron-demo-helpers/demo-snippet.html"/>
     <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+	    <link rel="import" href="../../bower_components/paper-button/paper-button.html">
     <link rel="import" href="../../bower_components/google-map/google-map.html"/>
     <link rel="import" href="../../utils/demo-page/demo-page.html">
+	<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
 
 </head>
 <body>	
-					
-				   <demo-page label="" path="intro">
+										
 
-				       <div class="info-sheet">
+					<dom-module id="time-start">
+					    <template>					        
+					        <app-localstorage-document key="e" data="[[time]]"></app-localstorage-document>
+							<paper-button on-click="_loaded">Reset</paper-button>
+					    </template>
+					    <script>
+					        Polymer({
+					            is: "time-start",
+					            properties: {
+					                time: {
+					                    type: Number,
+					                    value: 0,
+										observer: '_loaded' //maybe there is an event?
+					                }					              
+					            },
+					            _loaded: function () {
+									this.time = new Date().getTime();
+									console.log(this.time);
+					            }					          
+					        });
+					    </script>
+					</dom-module>				
+					
+				   <demo-page label="" path="intro">				  
+
+				       <div class="info-sheet">						   
 				           <h1 id="leading">Polymer to the rescue</h1>
 				           <h1>create web applications <span>faster</span><br/> and <span>with ease</span></h1>
 				           <h2>Lukasz Janicki, October 2016</h2>
+						   <time-start></time-start>	
 				       </div>
 
 				   </demo-page>
